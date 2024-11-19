@@ -1,5 +1,77 @@
+:root {
+  --primary-text: #e5e5e5;
+  --secondary-text: #A0A0A0;
+  --main-background: #121212;
+  --primary-container: #1e1e1e;
+  --secondary-container: #252525;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--main-background);
+  color: var(--primary-text);
+}
+
+/* Container around input */
+.upper-container {
+  background-color: var(--primary-container);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Metric Unit Conversion */
+h1 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+
+/* Input fields */
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 25%;
+  height: 4.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px solid var(--secondary-text);
+  background-color: var(--primary-container);
+  color: var(--primary-text);
+  font-size: 3rem;
+  border-radius: 10px;
+}
+
+/* convert button */
+button {
+  padding: 1rem;
+  margin: 1rem 0;
+  width: 25%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--secondary-text);
+}
+
+/* container around calculations */
+.lower-container {
+  background-color: var(--main-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* container for information */
+.inner-container {
+  background-color: var(--secondary-container);
 }
