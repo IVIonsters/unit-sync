@@ -1,9 +1,11 @@
 :root {
-  --primary-text: #e5e5e5;
-  --secondary-text: #A0A0A0;
+  --primary-text: #ffffff;
+  --secondary-text: #b3b3b3;
   --main-background: #121212;
-  --primary-container: #1e1e1e;
-  --secondary-container: #252525;
+  --primary-container: #1f1f1f;
+  --secondary-container: #2a2a2a;
+  --accent-color: #ff4081;
+  --border-color: #ff4081;
 }
 
 * {
@@ -32,6 +34,7 @@ h1 {
   text-align: center;
   padding: 1rem;
   font-size: 1.4rem;
+  color: var(--accent-color);
 }
 
 /* Input fields */
@@ -44,7 +47,7 @@ input {
   height: 4.5rem;
   padding: 1rem;
   margin: 1rem 0;
-  border: 2px solid var(--secondary-text);
+  border: 2px solid var(--border-color);
   background-color: var(--primary-container);
   color: var(--primary-text);
   font-size: 3rem;
@@ -59,7 +62,8 @@ button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background-color: var(--secondary-text);
+  background-color: var(--accent-color);
+  color: var(--primary-text);
 }
 
 /* container around calculations */
@@ -68,10 +72,28 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 /* container for information */
 .inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: var(--secondary-container);
+  /* space between containers  */
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 12vh;
+  color: var(--secondary-text);
+  font-size: .75rem;
+}
+
+/* calculations p tag */
+p {
+  font-size: .75rem;
+  padding: 1rem;
+  color: var(--primary-text);
 }
