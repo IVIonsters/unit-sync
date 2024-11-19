@@ -4,11 +4,15 @@ let convertBtn = document.getElementById('convert-btn');
 
 // Grab user input from input box when convert button is clicked
 function userInput() {
-  let user = input.value;
-  console.log(user);
+  let user = Number(input.value);
+  //add if statement to check if user input is a number
+  if (!isNaN(user)) {
+    console.log("User input is " + user + " and is a " + typeof user);
+  } else {
+    alert('Please enter a number');
+  }
 }
 convertBtn.addEventListener('click', userInput);
-
 
 //functions to converter user input from metric to imperial
 
