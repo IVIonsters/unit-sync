@@ -2,7 +2,14 @@
 let input = document.getElementById('user-input');
 let convertBtn = document.getElementById('convert-btn');
 
-// Grab user input from input box when convert button is clicked
+// Add event listener to the convert button
+convertBtn.addEventListener('click', function () {
+  let user = userInput();
+  meterToFeet(user);
+  litersToGallon(user);
+  kilogramToPounds(user);
+});
+
 function userInput() {
   let user = Number(input.value);
   // Check if user input is a number
@@ -18,27 +25,33 @@ function userInput() {
 // Function to convert meters to feet
 function meterToFeet(user) {
   if (user !== null) {
-    let feet = user * 3.28084;
+    let feet = parseFloat((user * 3.28084).toFixed(3));
+    let meter = parseFloat((user * 0.3048).toFixed(3));
     console.log(user + " meters is equal to " + feet + " feet");
-    displayResult(user + " meters is equal to " + feet + " feet");
+    meterDisplayResult(user + " meters = " + feet + " feet | " + user + " feet = " + meter + " meters");
   }
 }
 
 // Function to display result in the DOM
-function displayResult(message) {
-  const resultContainer = document.getElementById('result');
-  resultContainer.textContent = message;
+function meterDisplayResult(meterMessage) {
+  const meterContainer = document.getElementById('meter');
+  meterContainer.textContent = meterMessage;
 }
 
-// Add event listener to the convert button
-convertBtn.addEventListener('click', function () {
-  let user = userInput();
-  meterToFeet(user);
-});
-
 // liters to gallons
-function litersToGallon() {
+function litersToGallon(user) {
+  if (user !== null) {
+    let gallon = parseFloat((user * 0.264172).toFixed(3));
+    let liter = parseFloat((user * 3.78541).toFixed(3));
+    console.log(user + " liters is equal to " + gallon + " gallons");
+    literDisplayResult(user + " liters = " + gallon + " gallons | " + user + " gallons = " + liter + " liters");
+  }
+}
 
+// Function to display result in the DOM
+function literDisplayResult(literMessage) {
+  const literContainer = document.getElementById('liter');
+  literContainer.textContent = literMessage;
 }
 
 // kilogram to pounds
@@ -46,4 +59,3 @@ function kilogramToPounds() {
 
 }
 
-// render to various p tags in the html file
