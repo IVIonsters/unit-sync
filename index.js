@@ -55,7 +55,18 @@ function literDisplayResult(literMessage) {
 }
 
 // kilogram to pounds
-function kilogramToPounds() {
+function kilogramToPounds(user) {
+  if (user !== null) {
+    let pound = parseFloat((user * 2.20462).toFixed(3));
+    let kilogram = parseFloat((user * 0.453592).toFixed(3));
+    console.log(user + " kilograms is equal to " + pound + " pounds");
+    kilogramDisplayResult(user + " kilograms = " + pound + " pounds | " + user + " pounds = " + kilogram + " kilograms");
+  }
+}
 
+// Function to display result in the DOM 
+function kilogramDisplayResult(kilogramMessage) {
+  const kilogramContainer = document.getElementById('kilogram');
+  kilogramContainer.textContent = kilogramMessage;
 }
 
